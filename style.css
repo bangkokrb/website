@@ -96,13 +96,20 @@ ul.team {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
 }
 
 ul.team li {
     display: block;
     flex: 1;
     text-align: center;
+}
+
+ul.team li img {
+    width: 100px;
+    height: 100px;
+    border-radius: 16px;
+
 }
 
 ul.conferences {
