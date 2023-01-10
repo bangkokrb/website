@@ -2,8 +2,8 @@
 
 :root {
     --color-bg: #fff;
-    --color-link: #ed1944;
-    --color-accent: #ed1944;
+    --color-accent: hsl(348, 85%, 51%);
+    --color-accent-hover: hsl(348, 85%, 45%);
     --color-text: #000;
     --color-shadow: #f4f4f4;
     --color-text-secondary: #999;
@@ -40,7 +40,11 @@ main {
 
 a {
     text-decoration: none;
-    color: var(--color-link);
+    color: var(--color-accent);
+}
+
+a:hover {
+    color: var(--color-accent-hover);
 }
 
 nav ul {
@@ -78,6 +82,13 @@ nav ul li {
     margin: 0.5rem 0;
     padding: 1rem 2rem;
     box-shadow: var(--box-shadow) var(--color-shadow);
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: var(--color-accent-hover);
+    transform: scale(1.05);
+    color: var(--color-bg);
 }
 
 ul.team {
@@ -115,6 +126,21 @@ ul.conferences {
     margin: 1rem;
     padding: 1.25rem;
     width: var(--width-card);
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card.past {
+    opacity: 0.7;
+    transform: scale(0.9);
+}
+
+.card.past:hover {
+    opacity: 1;
+    transform: scale(0.95);
 }
 
 .card img {
