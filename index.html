@@ -140,6 +140,24 @@
                 interesting software development topics! We use Meetup.com to organize our monthly events, so
                 you can find the date of our next meetup there. If you'd like to give a talk, we're always looking for
                 speakers! See the Get Involved section to find out how to suggest a talk.</p>
+
+            <div id="nextEvent"></div>
+            <script>
+                const url =
+                    "https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.meetup.com%2Fbangkok-rb%2Fevents%2Frss%2F"
+                fetch(url).then(data => data.json()).then(data => {
+                    if (data.items.length > 0) {
+                        const event = data.items[0]
+                        const paragraphs = /<p>(.*?)<\/p>/g
+                        const allParagraphs = event.description.match(paragraphs)
+                        const date = allParagraphs[allParagraphs.length - 3] // 3rd last paragraph
+                        document.getElementById("nextEvent").innerHTML = (
+                            `<h3>Next event: <a target="_blank" href="${event.link}">${event.title}</a></h3>${date}`
+                            )
+                    }
+                })
+            </script>
+
             <p>
                 <a class="btn" href="https://www.meetup.com/bangkok-rb/">View on Meetup.com</a>
             </p>
