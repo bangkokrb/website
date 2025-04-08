@@ -175,6 +175,10 @@ ul.conferences {
     transform: scale(0.95);
 }
 
+.card.upcoming {
+    border: 8px solid var(--color-accent);
+}
+
 .card img {
     width: 100%;
 }
