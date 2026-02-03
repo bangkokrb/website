@@ -128,12 +128,14 @@ ul.team li {
     flex: 1;
     text-align: center;
 }
-
+ul.team li p {
+    margin-top:0;
+}
 ul.team li img {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     object-fit: fill;
-    border-radius: 16px;
+    border-radius: 10px;
 
 }
 
